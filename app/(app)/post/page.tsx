@@ -285,7 +285,7 @@ export default function PostTaskPage() {
           </fieldset>
         </div>
 
-        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-white p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] md:static md:col-span-2 md:border-0 md:bg-transparent md:p-0">
+        <div className="fixed inset-x-0 bottom-dock z-30 border-t border-border bg-white p-4 md:static md:col-span-2 md:border-0 md:bg-transparent md:p-0">
           <Button size="pill" className="w-full md:max-w-sm" type="submit" disabled={submitting}>
             {submitting ? "Posting…" : "Post Task"}
           </Button>
