@@ -4,25 +4,25 @@ overview: Greenfield Next.js marketplace for NearTask. Supabase for Auth, Postgr
 todos:
   - id: scaffold
     content: Scaffold Next.js PWA + Tailwind + shadcn + Supabase SSR + yellow design tokens + floating app shell
-    status: in_progress
+    status: completed
   - id: schema-seed
     content: Supabase SQL migrations, RLS, generated types, Afghanistan seed data (Kabul etc., AFN, km)
-    status: pending
+    status: completed
   - id: home-discovery
     content: Home + nearby tasks matching PWA layout (location, search, chips, empty/location-denied states)
-    status: pending
+    status: completed
   - id: auth-onboarding
     content: Yellow splash login (Google + Email) + Need Help / Want to Earn onboarding
-    status: pending
+    status: completed
   - id: core-loop
     content: Single-scroll Post Task, Activity tabs, task detail, offers, select helper
-    status: pending
+    status: completed
   - id: chat-notify
     content: Chat list/thread + notifications, matching wavy-header PWA screens
-    status: pending
+    status: completed
   - id: trust-polish
     content: Profile/Me, cash-only copy, report/block, desktop layout, a11y, performance
-    status: pending
+    status: completed
 isProject: false
 ---
 
@@ -141,11 +141,11 @@ Safe-area padding for iPhone home indicator. Large tap targets.
 
 Stacked white cards:
 
-- Title * (min 5, max 120, counter)
-- Description * (min 10, max 2000, counter)
-- Category * — 4×2 icon grid, selected cell yellow
-- Address * — Area + Locality (Afghan district/neighborhood)
-- Pricing * — amount in ؋, single field (cash)
+- Title \* (min 5, max 120, counter)
+- Description \* (min 10, max 2000, counter)
+- Category \* — 4×2 icon grid, selected cell yellow
+- Address \* — Area + Locality (Afghan district/neighborhood)
+- Pricing \* — amount in ؋, single field (cash)
 - Schedule (optional) — tap target → date/time sheet
 - Visible radius — pills **2 km / 5 km / 10 km** (selected yellow)
 - Location-blocked warning + **Fix** when GPS is off
