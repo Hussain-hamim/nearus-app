@@ -13,7 +13,7 @@ import { emailSchema } from "@/lib/validations";
 
 function EmailAuthForm() {
   const router = useRouter();
-  const next = useSearchParams().get("next") ?? "/";
+  const next = useSearchParams().get("next") ?? "/home";
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

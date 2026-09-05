@@ -83,7 +83,7 @@ export default function ChatListPage() {
       <WavyHeader>
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-semibold">Chat</h1>
-          <Link href="/" aria-label="Browse tasks">
+          <Link href="/home" aria-label="Browse tasks">
             <PenSquare className="size-5" />
           </Link>
         </div>
@@ -105,7 +105,7 @@ export default function ChatListPage() {
             description="Chat opens after you select a helper."
             action={
               <Link
-                href="/"
+                href="/home"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
               >
                 Browse Tasks

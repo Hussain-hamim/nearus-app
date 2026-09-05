@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/home", label: "Home" },
   { href: "/activity", label: "Activity" },
   { href: "/chat", label: "Chat" },
   { href: "/me", label: "Me" },
@@ -27,7 +27,7 @@ export function DesktopNav({
   return (
     <header className="sticky top-0 z-40 hidden border-b border-border bg-white/90 backdrop-blur md:block">
       <div className="mx-auto flex h-16 max-w-[1120px] items-center gap-6 px-6">
-        <Link href="/" aria-label="NearTask home">
+        <Link href="/home" aria-label="NearTask home">
           <Logo />
         </Link>
         <form
@@ -35,7 +35,7 @@ export function DesktopNav({
           onSubmit={(e) => {
             e.preventDefault();
             const q = new FormData(e.currentTarget).get("q");
-            router.push(q ? `/?q=${encodeURIComponent(String(q))}` : "/");
+            router.push(q ? `/home?q=${encodeURIComponent(String(q))}` : "/home");
           }}
         >
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -50,8 +50,8 @@ export function DesktopNav({
         <nav className="flex items-center gap-1">
           {links.map((link) => {
             const active =
-              link.href === "/"
-                ? pathname === "/"
+              link.href === "/home"
+                ? pathname === "/home"
                 : pathname.startsWith(link.href);
             return (
               <Link
