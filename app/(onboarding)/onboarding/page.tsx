@@ -55,7 +55,7 @@ export default function OnboardingPage() {
         </button>
         <button
           type="button"
-          onClick={() => void choose("want_to_earn", "/")}
+          onClick={() => void choose("want_to_earn", "/home")}
           className="flex items-start gap-4 rounded-2xl border border-border bg-white p-5 text-left"
         >
           <span className="flex size-14 items-center justify-center rounded-full bg-primary/20 text-primary">
@@ -72,7 +72,7 @@ export default function OnboardingPage() {
       <Button
         variant="ghost"
         className="mt-8 self-center"
-        onClick={() => void choose("skipped", "/")}
+        onClick={() => void choose("skipped", "/home")}
       >
         Skip for now
       </Button>

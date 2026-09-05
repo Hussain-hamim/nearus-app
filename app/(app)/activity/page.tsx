@@ -157,7 +157,7 @@ export default function ActivityPage() {
       </div>
 
       <Link
-        href="/"
+        href="/home"
         className="mx-5 mt-6 block rounded-2xl bg-secondary p-4 md:mx-0"
       >
         <p className="font-semibold">Looking to earn?</p>

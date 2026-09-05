@@ -12,7 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const items = [
-  { href: "/", label: "Home", icon: Home },
+  { href: "/home", label: "Home", icon: Home },
   { href: "/activity", label: "Activity", icon: ListTodo },
   { href: "/chat", label: "Chat", icon: MessageCircle },
   { href: "/me", label: "Me", icon: User },
@@ -54,7 +54,7 @@ export function MobileDock({ unreadChat = 0 }: { unreadChat?: number }) {
         <Link
           href="/post"
           aria-label="Post a task"
-          className="absolute left-1/2 top-0 z-10 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_8px_20px_rgba(245,196,0,0.55)] ring-4 ring-white"
+          className="absolute left-1/2 top-0 z-10 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_8px_20px_rgba(165,180,252,0.55)] ring-4 ring-white"
         >
           <Plus className="size-7 stroke-[2.5]" />
         </Link>
@@ -76,7 +76,7 @@ function DockItem({
   pathname: string;
   unreadChat: number;
 }) {
-  const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const active = href === "/home" ? pathname === "/home" : pathname.startsWith(href);
 
   return (
     <Link

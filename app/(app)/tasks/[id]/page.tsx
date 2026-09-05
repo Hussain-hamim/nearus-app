@@ -387,7 +387,7 @@ export default function TaskDetailPage({
                 body: JSON.stringify({ blocked_id: task.requester_id }),
               });
               toast.success("This person is blocked.");
-              router.push("/");
+              router.push("/home");
             }}
           >
             Block

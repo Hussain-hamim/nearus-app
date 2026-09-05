@@ -106,7 +106,7 @@ export default function HomePage() {
 
       <section className="mx-5 mt-4 flex items-center justify-between gap-4 overflow-hidden rounded-3xl bg-lavender px-5 py-4 md:mx-0">
         <div>
-          <p className="text-xs font-semibold tracking-wide text-violet-700">
+          <p className="text-xs font-semibold tracking-wide text-brand-8">
             CASH ON COMPLETION
           </p>
           <h2 className="mt-1 text-lg font-semibold leading-snug">

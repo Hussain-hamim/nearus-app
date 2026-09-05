@@ -8,6 +8,11 @@ export const brand = {
   locale: "en-AF",
   country: "Afghanistan",
   distanceUnit: "km",
+  emails: {
+    contact: "contact@neartask.app",
+    support: "support@neartask.app",
+    legal: "legal@neartask.app",
+  },
 } as const;
 
 export type Brand = typeof brand;
