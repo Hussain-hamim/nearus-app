@@ -6,7 +6,7 @@ export function WavyHeader({
   className?: string;
 }) {
   return (
-    <header className={`relative bg-primary pt-safe ${className}`}>
+    <header className={`relative bg-primary pt-safe text-primary-foreground ${className}`}>
       <div className="relative z-10 px-5 pb-8 pt-4 md:px-0">{children}</div>
       <svg
         className="absolute inset-x-0 bottom-0 h-7 w-full text-background"

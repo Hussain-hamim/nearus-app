@@ -47,14 +47,14 @@ export default function LoginPage() {
               }}
             />
             <div className="mt-2 flex justify-end">
-              <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-4 ring-white">
+              <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-4 ring-card">
                 <ArrowRight className="size-5" />
               </span>
             </div>
           </div>
         </div>
         <svg
-          className="h-10 w-full text-white"
+          className="h-10 w-full text-card"
           viewBox="0 0 1440 48"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -65,7 +65,7 @@ export default function LoginPage() {
           />
         </svg>
       </div>
-      <div className="bg-white px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2">
+      <div className="bg-card px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2">
         <div className="mx-auto flex w-full max-w-sm flex-col gap-3">
           <Button
             size="pill"
@@ -77,7 +77,7 @@ export default function LoginPage() {
           <Button
             size="pill"
             variant="outline"
-            className="w-full border-primary bg-white text-foreground hover:bg-primary/10"
+            className="w-full border-primary bg-card text-foreground hover:bg-primary/10"
             onClick={() => router.push("/login/email")}
           >
             <Mail />

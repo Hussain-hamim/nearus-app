@@ -16,10 +16,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light">
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <QueryClientProvider client={client}>
         {children}
-        <Toaster theme="light" position="top-center" />
+        <Toaster position="top-center" />
       </QueryClientProvider>
     </ThemeProvider>
   );

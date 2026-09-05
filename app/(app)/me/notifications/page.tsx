@@ -13,7 +13,7 @@ export default function NotificationSettingsPage() {
           "New chat message",
           "New review",
         ].map((item) => (
-          <li key={item} className="rounded-2xl border border-border bg-white px-4 py-3">
+          <li key={item} className="rounded-2xl border border-border bg-card px-4 py-3">
             {item}
           </li>
         ))}

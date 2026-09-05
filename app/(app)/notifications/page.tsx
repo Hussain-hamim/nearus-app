@@ -70,7 +70,7 @@ export default function NotificationsPage() {
                   key={item.id}
                   href={href}
                   className={`block rounded-2xl border border-border p-4 ${
-                    item.read_at ? "bg-white" : "bg-secondary"
+                    item.read_at ? "bg-card" : "bg-secondary"
                   }`}
                 >
                   <p className="font-medium">{item.title}</p>

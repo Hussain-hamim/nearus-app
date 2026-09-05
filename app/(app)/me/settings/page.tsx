@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 
 export default function SettingsPage() {
@@ -25,7 +26,16 @@ export default function SettingsPage() {
       <p className="mt-2 text-sm text-muted-foreground">
         NearTask is cash only. There are no wallets, cards, or transaction histories to manage.
       </p>
-      <div className="mt-6 rounded-2xl border border-border bg-white p-4 text-sm">
+      <div className="mt-6 rounded-2xl border border-border bg-card p-4 text-sm">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="font-medium">Appearance</p>
+            <p className="text-muted-foreground">Light, dark, or match your device.</p>
+          </div>
+          <ThemeToggle />
+        </div>
+      </div>
+      <div className="mt-4 rounded-2xl border border-border bg-card p-4 text-sm">
         <p className="font-medium">Language</p>
         <p className="text-muted-foreground">English for MVP. Dari and Pashto later.</p>
       </div>

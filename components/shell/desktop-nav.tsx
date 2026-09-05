@@ -4,7 +4,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Bell, MessageCircle, Plus, Search } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
+import { UnreadBadge } from "@/components/shell/unread-badge";
 import { Input } from "@/components/ui/input";
+import { formatUnreadBadge } from "@/lib/format-unread-badge";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -23,6 +25,7 @@ export function DesktopNav({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const chatBadge = formatUnreadBadge(unreadChat);
 
   return (
     <header className="sticky top-0 z-40 hidden border-b border-border bg-white/90 backdrop-blur md:block">
@@ -63,21 +66,32 @@ export function DesktopNav({
                     ? "bg-primary/20 text-foreground"
                     : "text-muted-foreground hover:bg-muted"
                 )}
+                aria-label={
+                  link.href === "/chat" && chatBadge
+                    ? `Chat, ${unreadChat} unread`
+                    : undefined
+                }
               >
                 {link.label}
-                {link.href === "/chat" && unreadChat > 0 ? (
-                  <span className="absolute right-1.5 top-1 size-1.5 rounded-full bg-primary" />
+                {link.href === "/chat" && chatBadge ? (
+                  <UnreadBadge count={unreadChat} cap={4} />
                 ) : null}
               </Link>
             );
           })}
         </nav>
         <div className="flex items-center gap-2">
-          <Link href="/notifications" aria-label="Notifications" className="relative">
+          <Link
+            href="/notifications"
+            aria-label={
+              unreadNotifications > 0
+                ? `Notifications, ${unreadNotifications} unread`
+                : "Notifications"
+            }
+            className="relative flex size-10 items-center justify-center"
+          >
             <Bell className="size-5 text-muted-foreground" />
-            {unreadNotifications > 0 ? (
-              <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-primary" />
-            ) : null}
+            <UnreadBadge count={unreadNotifications} cap={9} />
           </Link>
           <Link href="/chat" className="md:hidden" aria-label="Chat">
             <MessageCircle className="size-5" />

@@ -7,16 +7,20 @@ import { Bell, MapPin, RefreshCw, Search, SlidersHorizontal } from "lucide-react
 import { CategoryChips } from "@/components/tasks/category-chips";
 import { TaskCard } from "@/components/tasks/task-card";
 import { EmptyState } from "@/components/empty-state";
+import { UnreadBadge } from "@/components/shell/unread-badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGeolocation } from "@/hooks/use-geolocation";
+import { useUnreadCounts } from "@/hooks/use-unread-counts";
 import type { TaskCategory } from "@/lib/categories";
 import { createClient } from "@/lib/supabase/client";
 import type { NearbyTask } from "@/types/database";
 
 export default function HomePage() {
   const { state, request, previewKabul } = useGeolocation();
+  const { data: unread } = useUnreadCounts();
+  const unreadNotifications = unread?.notifications ?? 0;
   const [category, setCategory] = useState<"all" | TaskCategory>("all");
   const [q, setQ] = useState("");
   const [radius, setRadius] = useState(10);
@@ -65,10 +69,15 @@ export default function HomePage() {
         </div>
         <Link
           href="/notifications"
-          aria-label="Notifications"
-          className="flex size-10 items-center justify-center rounded-full bg-white ring-1 ring-border"
+          aria-label={
+            unreadNotifications > 0
+              ? `Notifications, ${unreadNotifications} unread`
+              : "Notifications"
+          }
+          className="relative flex size-10 items-center justify-center rounded-full bg-white ring-1 ring-border"
         >
           <Bell className="size-5" />
+          <UnreadBadge count={unreadNotifications} cap={9} />
         </Link>
       </header>
 
@@ -103,20 +112,6 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-
-      <section className="mx-5 mt-4 flex items-center justify-between gap-4 overflow-hidden rounded-3xl bg-lavender px-5 py-4 md:mx-0">
-        <div>
-          <p className="text-xs font-semibold tracking-wide text-brand-8">
-            CASH ON COMPLETION
-          </p>
-          <h2 className="mt-1 text-lg font-semibold leading-snug">
-            Need help nearby? Post a task. Want to earn? Send an offer.
-          </h2>
-        </div>
-        <div className="hidden size-16 shrink-0 items-center justify-center rounded-full bg-white/70 text-3xl sm:flex">
-          ؋
-        </div>
-      </section>
 
       <div className="mt-5 px-5 md:px-0">
         <CategoryChips value={category} onChange={setCategory} />

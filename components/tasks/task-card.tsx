@@ -31,7 +31,7 @@ export function TaskCard({
   const content = (
     <article
       className={cn(
-        "flex items-center gap-3 rounded-2xl border border-border bg-white p-3",
+        "flex items-center gap-3 rounded-2xl border border-border bg-card p-3",
         className
       )}
     >
