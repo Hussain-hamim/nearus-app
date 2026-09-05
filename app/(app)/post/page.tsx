@@ -127,7 +127,7 @@ export default function PostTaskPage() {
         className="mt-5 space-y-4 px-5 pb-28 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 md:px-0"
       >
         <div className="space-y-4">
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label htmlFor="title">Title *</Label>
             <Input
               id="title"
@@ -145,7 +145,7 @@ export default function PostTaskPage() {
             ) : null}
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label htmlFor="description">Description *</Label>
             <Textarea
               id="description"
@@ -158,7 +158,7 @@ export default function PostTaskPage() {
             </p>
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label>Category *</Label>
             <div className="mt-3 grid grid-cols-4 gap-2">
               {TASK_CATEGORIES.map((item) => {
@@ -187,7 +187,7 @@ export default function PostTaskPage() {
         </div>
 
         <div className="space-y-4">
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label>Address *</Label>
             <p className="mb-3 text-xs text-muted-foreground">
               Area + locality (district / neighborhood)
@@ -231,7 +231,7 @@ export default function PostTaskPage() {
             )}
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label htmlFor="budget">Pricing * (؋ cash)</Label>
             <div className="relative mt-2">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 font-semibold">؋</span>
@@ -245,7 +245,7 @@ export default function PostTaskPage() {
             </div>
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <button
               type="button"
               className="flex w-full items-center justify-between text-left"
@@ -263,7 +263,7 @@ export default function PostTaskPage() {
             </button>
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-border bg-white p-4">
+          <fieldset className="rounded-2xl border border-border bg-card p-4">
             <Label>Visible radius</Label>
             <div className="mt-3 flex gap-2">
               {VISIBILITY_RADII_KM.map((km) => (
@@ -285,7 +285,7 @@ export default function PostTaskPage() {
           </fieldset>
         </div>
 
-        <div className="fixed inset-x-0 bottom-dock z-30 border-t border-border bg-white p-4 md:static md:col-span-2 md:border-0 md:bg-transparent md:p-0">
+        <div className="fixed inset-x-0 bottom-dock z-30 border-t border-border bg-card p-4 md:static md:col-span-2 md:border-0 md:bg-transparent md:p-0">
           <Button size="pill" className="w-full md:max-w-sm" type="submit" disabled={submitting}>
             {submitting ? "Posting…" : "Post Task"}
           </Button>

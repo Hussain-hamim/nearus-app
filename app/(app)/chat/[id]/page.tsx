@@ -116,7 +116,7 @@ export default function ChatThreadPage({
             <div key={msg.id} className={`flex ${mine ? "justify-end" : "justify-start"}`}>
               <div
                 className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
-                  mine ? "bg-primary text-primary-foreground" : "bg-white ring-1 ring-border"
+                  mine ? "bg-primary text-primary-foreground" : "bg-card ring-1 ring-border"
                 }`}
               >
                 <p>{msg.body}</p>
@@ -137,7 +137,7 @@ export default function ChatThreadPage({
           value={body}
           onChange={(e) => setBody(e.target.value)}
           placeholder="Message…"
-          className="h-12 flex-1 rounded-full bg-white"
+          className="h-12 flex-1 rounded-full bg-card"
         />
         <Button size="icon-lg" className="rounded-full" type="submit" aria-label="Send">
           <Send />

@@ -53,7 +53,7 @@ export default function MePage() {
       </WavyHeader>
 
       <div className="-mt-2 px-5 md:px-0">
-        <div className="flex flex-col items-center rounded-2xl border border-border bg-white p-6">
+        <div className="flex flex-col items-center rounded-2xl border border-border bg-card p-6">
           <div className="relative">
             <Avatar className="size-24">
               <AvatarImage src={profile?.avatar_url ?? undefined} />
@@ -61,7 +61,7 @@ export default function MePage() {
             </Avatar>
             <Link
               href="/me/edit"
-              className="absolute -bottom-1 -right-1 flex size-8 items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-white"
+              className="absolute -bottom-1 -right-1 flex size-8 items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-card"
               aria-label="Edit profile"
             >
               <Pencil className="size-4" />
@@ -83,7 +83,7 @@ export default function MePage() {
           </Link>
         </div>
 
-        <section className="mt-4 rounded-2xl border border-border bg-white p-4">
+        <section className="mt-4 rounded-2xl border border-border bg-card p-4">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground">
             PAYING FOR TASKS
           </p>
@@ -95,7 +95,7 @@ export default function MePage() {
           </p>
         </section>
 
-        <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-white">
+        <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card">
           {rows.map((row) => (
             <Link
               key={row.href}

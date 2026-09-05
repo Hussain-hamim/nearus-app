@@ -9,6 +9,8 @@ import {
   Plus,
   User,
 } from "lucide-react";
+import { formatUnreadBadge } from "@/lib/format-unread-badge";
+import { UnreadBadge } from "@/components/shell/unread-badge";
 import { cn } from "@/lib/utils";
 
 const items = [
@@ -77,11 +79,13 @@ function DockItem({
   unreadChat: number;
 }) {
   const active = href === "/home" ? pathname === "/home" : pathname.startsWith(href);
+  const chatBadge = href === "/chat" ? formatUnreadBadge(unreadChat) : null;
 
   return (
     <Link
       href={href}
       className="relative flex min-w-14 flex-col items-center gap-0.5 px-2 py-1 text-[11px] font-medium"
+      aria-label={chatBadge ? `Chat, ${unreadChat} unread` : undefined}
     >
       <span className="relative">
         <Icon
@@ -90,8 +94,12 @@ function DockItem({
             active ? "text-primary" : "text-muted-foreground"
           )}
         />
-        {href === "/chat" && unreadChat > 0 ? (
-          <span className="absolute -right-1 -top-0.5 size-2 rounded-full bg-primary" />
+        {chatBadge ? (
+          <UnreadBadge
+            count={unreadChat}
+            cap={4}
+            className="-right-2.5 -top-1.5"
+          />
         ) : null}
       </span>
       <span className={cn(active ? "text-foreground" : "text-muted-foreground")}>

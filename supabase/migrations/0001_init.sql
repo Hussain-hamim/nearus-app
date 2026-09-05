@@ -327,7 +327,7 @@ set search_path = public
 as $$
   select
     (
-      select count(*)
+      select count(distinct m.conversation_id)
       from public.messages m
       join public.conversations c on c.id = m.conversation_id
       where m.read_at is null

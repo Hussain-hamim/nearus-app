@@ -8,7 +8,7 @@ export default function HelpPage() {
         <li>Select a helper — chat opens, and they can see the exact address.</li>
         <li>Pay in cash when the job is done. Then review each other.</li>
       </ol>
-      <section id="support" className="mt-8 rounded-2xl border border-border bg-white p-4">
+      <section id="support" className="mt-8 rounded-2xl border border-border bg-card p-4">
         <h2 className="font-semibold">Contact Support</h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Email support@neartask.local with the task title and what went wrong. English only for MVP.
